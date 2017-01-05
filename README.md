@@ -8,7 +8,7 @@ The Investor can then make up to 3 offers, which the Target may accept or reject
 
 ## Getting Started
 
-Simply clone this repository and open index.html in your browser to play.
+Simply clone this repository and open [index.html](https://github.com/wdi-sg/wdi-7-project-1-melvinthemok/blob/master/index.html) in your browser to play.
 
 ### Prerequisites
 
@@ -16,9 +16,9 @@ There are no prerequisites to run the game.
 
 ### How to Use
 
-Click the button on index.html labelled 'Instructions' to read the game rules.
+Click the button on [index.html](https://github.com/wdi-sg/wdi-7-project-1-melvinthemok/blob/master/index.html) labelled 'Instructions' to read the game rules.
 
-Click the 'Play' button on index.html when you and your opponent are ready.
+Click the 'Play' button on [index.html](https://github.com/wdi-sg/wdi-7-project-1-melvinthemok/blob/master/index.html) when you and your opponent are ready.
 
 Gameplay controlled by mouse.
 
@@ -49,8 +49,8 @@ Done solo.
 
 Hat tip to:
 
-* Philipp Henzler's beautiful photo found [here] {https://unsplash.com/photos/dgE3lWVyDh8};
-* Anders Jildén's great photos found [here]{https://unsplash.com/photos/nxCtO8W9JLo} and [here]{https://unsplash.com/photos/yb0Qs65aZmc}.
+* Philipp Henzler's beautiful photo found [here] (https://unsplash.com/photos/dgE3lWVyDh8);
+* Anders Jildén's great photos found [here](https://unsplash.com/photos/nxCtO8W9JLo) and [here](https://unsplash.com/photos/yb0Qs65aZmc).
 
 Clarity and inspiration from:
 
