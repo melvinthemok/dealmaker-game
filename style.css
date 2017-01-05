@@ -1,0 +1,394 @@
+.btn {
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  border: 0 none;
+  border-radius: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none;
+}
+
+.btn.outline {
+	background: none;
+	/*padding: 12px 22px;*/
+}
+
+.btn-success.outline {
+	border: 2px solid #6eed0c;
+	color: #6eed0c;
+}
+
+.btn-success.outline:hover, .btn-success.outline:focus, .btn-success.outline:active, .btn-success.outline.active, .open > .dropdown-toggle.btn-success {
+	color: #ffffff;
+	border-color: #ffffff;
+  background: #6eed0c;
+  font-weight: 700;
+}
+.btn-success.outline:active, .btn-success.outline.active {
+  color: #ffffff;
+	border-color: #ffffff;
+  background: #6eed0c;
+  font-weight: 700;
+	box-shadow: none;
+}
+
+.btn-danger.outline {
+	border: 2px solid #ff4842;
+	color: #ff4842;
+}
+
+.btn-danger.outline:hover, .btn-danger.outline:focus, .btn-danger.outline:active, .btn-danger.outline.active, .open > .dropdown-toggle.btn-danger {
+	color: #ffffff;
+	border-color: #ffffff;
+  background: #ff4842;
+  font-weight: 700;
+}
+.btn-danger.outline:active, .btn-danger.outline.active {
+  color: #ffffff;
+	border-color: #ffffff;
+  background: #ff4842;
+  font-weight: 700;
+	box-shadow: none;
+}
+
+.btn-primary.outline {
+	border: 2px solid #ffa00d;
+	color: #ffa00d;
+}
+
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+	color: #ffffff;
+	border-color: #ffffff;
+  background: #ffa00d;
+  font-weight: 700;
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+  color: #ffffff;
+	border-color: #ffffff;
+  background: #ffa00d;
+  font-weight: 700;
+	box-shadow: none;
+}
+
+.btn-info.outline {
+	border: 2px solid #0ddeff;
+	color: #0ddeff;
+}
+
+.btn-info.outline:hover, .btn-info.outline:focus, .btn-info.outline:active, .btn-info.outline.active, .open > .dropdown-toggle.btn-info {
+	color: #ffffff;
+	border-color: #ffffff;
+  background: #0ddeff;
+  font-weight: 700;
+}
+.btn-info.outline:active, .btn-info.outline.active {
+  color: #ffffff;
+	border-color: #ffffff;
+  background: #0ddeff;
+  font-weight: 700;
+	box-shadow: none;
+}
+
+body {
+  background: url(img/cover.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+#intro {
+  text-align: center;
+  margin-top: 450px;
+  background: rgba(0,0,0,0.6);
+  color: #ffffff;
+}
+
+#intro h1 {
+  font-size: 72px;
+}
+
+#mainInstruct {
+  display: none;
+  text-align: left;
+  margin-top: 50px;
+  background: rgba(0,0,0,0.6);
+  color: #ffffff;
+}
+
+#mainInstruct h1 {
+  text-align: center;
+  margin: 48px 0;
+}
+
+#mainInstruct h4 {
+  margin-bottom: 36px;
+}
+
+#mainInstruct ul {
+  font-size: 18px;
+}
+
+#backRow {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+#secretInstruct {
+  display: none;
+  text-align: center;
+  margin-top: 250px;
+  background: rgba(0,0,0,0.6);
+  color: #ffffff;
+}
+
+#panel {
+  background: rgba(0,0,0,0);
+}
+
+#showActVal {
+  display: none;
+}
+
+#secretInstructions {
+  display: none;
+  text-align: left;
+  margin: 24px 0;
+}
+
+#buttonCol {
+  text-align: center;
+  margin-top: 14px;
+}
+
+#buttonCol button {
+  margin: 4px 0;
+}
+
+#buttonDesc h3 {
+  margin: 29px 0;
+}
+
+#buttonStart {
+  text-align: center;
+}
+
+#quote1 {
+  display: none;
+  margin-top: 250px;
+  background: rgba(0,0,0,0.6);
+  color: #ffffff;
+  text-align: center;
+}
+
+#quote1 h1 {
+  text-align: left;
+}
+
+#quote1 h5 {
+  text-align: right;
+}
+
+#info,
+#bargain {
+  display: none;
+  margin-top: 50px;
+}
+
+#bargainTargetChoices {
+  margin-top: 177px;
+}
+
+.investor {
+  border: 2px solid #ffa00d;
+  background: rgba(0,0,0,0.6);
+  color: #ffa00d;
+}
+
+.investor h1 {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+#noRequests,
+#noOffers {
+  text-align: left;
+  color: #ffa00d;
+}
+
+.target {
+  border: 2px solid #0ddeff;
+  background: rgba(0,0,0,0.6);
+  color: #0ddeff;
+}
+
+.target h1 {
+  margin-bottom: 40px;
+}
+
+.targetScore,
+#noDeclines,
+.choiceButtons {
+  text-align: right;
+}
+
+.addChoices {
+  display: none;
+}
+
+.board {
+  background: rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+.board h1 {
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+#infoTimer,
+#bargainTimer {
+  color: #ffa00d;
+}
+
+#secrets {
+  text-align: right;
+}
+
+#yesAnnounce,
+#noAnnounce,
+#noAnnounceAgain {
+  display: none;
+  color: #ffffff;
+}
+
+#estVal,
+#estValAgain {
+  color: #ffffff;
+  margin-bottom: 48px;
+}
+
+#messageMid,
+#messageEnd {
+  display: none;
+  text-align: center;
+  margin-top: 200px;
+  color: #ffffff;
+  background: rgba(0,0,0,0.6);
+}
+
+#messageMid h1 {
+  text-align: left;
+}
+
+#messageMid h5 {
+  text-align: right;
+}
+
+input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    /*fix for FF unable to apply focus style bug */
+    border: 1px solid #ffffff;
+    /*required for proper track sizing in FF*/
+    width: 350px;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 350px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #2b00f7;
+    margin-top: -4px;
+    cursor: pointer;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+input[type=range]::-moz-range-track {
+    width: 350px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #2b00f7;
+    cursor: pointer;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+    outline: 1px solid #ffffff;
+    outline-offset: -1px;
+}
+
+input[type=range]::-ms-track {
+    width: 350px;
+    height: 5px;
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #2b00f7;
+    cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
+}
+
+label {
+  margin-bottom: 20px;
+}
+
+#haggle {
+  color: #ffffff;
+}
+
+#slider {
+  width: 350px;
+  margin: 0 auto;
+}
+
+#dollars {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 10px 0;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Dealmaker</title>
+  </head>
+  <body>
+    <div class="container col-md-6 col-md-offset-3" id="intro">
+      <h1>Dealmaker</h1>
+      <button class="btn btn-lg btn-primary outline" id="instruct">Instructions</button>
+      <button class="btn btn-lg btn-primary outline" id="play">Play</button>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3" id="mainInstruct">
+        <div class="col-md-8 col-md-offset-2">
+          <h1>Instructions</h1>
+          <h4>This is a negotiation game involving the sale of a stake in the Target to an Investor.</h4>
+          <h4>In each game, there will be a random number of rounds to be played. Don't worry, it'll be a single-digit number.</h4>
+          <h4>In every round, the Investor knows the Estimated Value to be $100 million. The Actual Value of the Target will be revealed in secret instructions to the Target.</h4>
+          <h4>Each round has 2 phases. In the first phase, there are 5 data points unknown to the Investor. If all data points are disclosed, this will reveal the Actual Value. The disclosure of each data point will update the Estimated Value, either <span style="color:#6eed0c">upwards</span> or <span style="color:#ff4842">downwards</span>.</h4>
+          <h4>The Investor has 6 chances to make requests for these 5 data points. The Investor has a time limit of 15 seconds to make a request, failing which the number of requests decreases by 1. When the Investor has no requests remaining, the first phase of the game ends.</h4>
+          <h4>The Target has 3 chances to reject the Investor's requests. The Target's number of rejections will also decrease by 1 after 15 seconds. When the Target has no chances remaining, the requested data points will automatically be disclosed.</h4>
+          <h4>At any point in time, either the Investor or the Target can walk away and the round will end immediately.</h4>
+          <h4>In the second phase of the round, the Investor may make up to 3 offers, which the Target may either accept or reject.</h4>
+          <h4>The possible outcomes at the end of each round are as follows:</h4>
+          <ul class='lead'>
+            <li>Investor pays Actual Value +/- $5 million:<br>Investor <strong><span style="color:#6eed0c">+1</span></strong> point<br>Target <strong><span style="color:#6eed0c">+1</span></strong> point</li><br>
+            <li>Investor pays > Actual Value + $5 million:<br>Target <strong><span style="color:#6eed0c">+1</span></strong> point</li><br>
+            <li>Investor pays < Actual Value - $5 million:<br>Investor <strong><span style="color:#6eed0c">+1</span></strong> point</li><br>
+            <li>Investor and Target fail to agree on a price:<br>No change in points</li><br>
+            <li>Investor fails to make an offer within the time limit:<br>Investor <strong><span style="color:#ff4842">-1</span></strong> point</li><br>
+            <li>Target fails to respond to an offer within the time limit:<br>Target <strong><span style="color:#ff4842">-1</span></strong> point</li><br>
+            <li>Either Investor or Target walks:<br>Investor <strong><span style="color:#ff4842">-3</span></strong> points<br>Target <strong><span style="color:#ff4842">-3</span></strong> points</li><br>
+          </ul>
+          <h4>At the end of the game, the winner is the player with the greater number of points, <span style="color:#6eed0c">which must be positive</span>.</h4>
+        </div>
+        <div class="row">
+          <div class="col-md-12" id="backRow">
+            <button class="btn btn-lg btn-primary outline" id="back">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3" id="secretInstruct">
+        <div id="panel">
+          <h2>Next up, Target's secret instructions.<br><br>Avert your gaze, Investor. No looking!</h1><br>
+          <button class="btn btn-lg btn-primary outline" id="showSecInstr">Show</button>
+        </div>
+        <div id="showActVal">
+          <h2></h2>
+        </div>
+        <div id="secretInstructions">
+          <h3>The following information unknown to Investor will change Target's Estimated Value as follows:</h3>
+          <div class="row">
+            <div class="col-md-2 col-md-offset-2" id="buttonCol">
+              <button class='btn btn-lg outline'></button>
+              <button class='btn btn-lg outline'></button>
+              <button class='btn btn-lg outline'></button>
+              <button class='btn btn-lg outline'></button>
+              <button class='btn btn-lg outline'></button>
+            </div>
+            <div class="col-md-7 col-md-offset-1" id="buttonDesc">
+              <h3></h3>
+              <h3></h3>
+              <h3></h3>
+              <h3></h3>
+              <h3></h3>
+            </div>
+          </div>
+          <div class="row" id="buttonStart">
+            <h3>If Investor is ready, feel free to</h3><br>
+            <button class="btn btn-lg btn-primary outline" id="start">Start</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3" id="quote1">
+        <h1></h1>
+        <h5 class="lead"></h5>
+        <button class="btn btn-lg btn-primary outline" id="proceed">Continue</button>
+      </div>
+    </div>
+    <div class="row">
+      <div id="info">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2 investor">
+              <h1>Investor</h1>
+              <h4>Score</h4>
+              <h1 class="investorScore"></h1>
+              <h4>Number of Requests left</h3>
+              <h1 id="noRequests"></h2>
+              <div class="choices">
+                <h4>Choices</h4>
+                <button class="btn btn-lg btn-primary outline go">Walk</button>
+              </div>
+            </div>
+            <div class="col-md-6 col-md-offset-1 board">
+              <div class="row">
+                <div class="col-md-4 btw">
+                  <h2 id="infoTimer"></h2>
+                </div>
+              </div>
+              <h1>Choose something, Investor</h1>
+              <div class="row">
+                <div class="col-md-5 col-md-offset-7" id="secrets">
+                  <button class='btn btn-lg outline'></button>
+                  <button class='btn btn-lg outline'></button>
+                  <button class='btn btn-lg outline'></button>
+                  <button class='btn btn-lg outline'></button>
+                  <button class='btn btn-lg outline'></button>
+                </div>
+                <div class="col-md-12" id="yesAnnounce">
+                  <h4 class="reveal"></h4><br>
+                  <button class="btn btn-lg btn-primary outline" id="yesContinue">Continue</button>
+                </div>
+                <div class="col-md-12" id="noAnnounce">
+                  <h4 class="stonewall"></h4><br>
+                  <button class="btn btn-lg btn-primary outline" id="noContinue">Continue</button>
+                </div>
+              </div>
+              <h3 id="estVal"></h3>
+            </div>
+            <div class="col-md-2 col-md-offset-1 target">
+              <h1>Target</h1>
+              <h4>Score</h4>
+              <h1 class="targetScore"></h1>
+              <h4>Number of Rejections left</h3>
+              <h1 id="noDeclines"></h3>
+              <div class="choices">
+                <h4>Choices</h4>
+                <div class="choiceButtons">
+                  <button class="btn btn-lg btn-info outline go">Walk</button>
+                  <button class="btn btn-lg btn-info outline addChoices" id="yes">Disclose</button>
+                  <button class="btn btn-lg btn-info outline addChoices" id="no">Reject</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container col-md-6 col-md-offset-3" id="messageMid">
+        <h1></h1>
+        <h5 class="lead"></h5>
+        <button class="btn btn-lg btn-primary outline" id="infoToBargain">Continue</button>
+      </div>
+    </div>
+    <div class="row">
+      <div id="bargain">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2 investor">
+              <h1>Investor</h1>
+              <h4>Score</h4>
+              <h1 class="investorScore"></h1>
+              <h4>Number of Offers left</h3>
+              <h1 id="noOffers"></h2>
+              <div class="choices">
+                <h4>Choices</h4>
+                <button class="btn btn-lg btn-primary outline go">Walk</button>
+                <button class="btn btn-lg btn-primary outline" id="offer">Offer</button>
+              </div>
+            </div>
+            <div class="col-md-6 col-md-offset-1 board">
+              <div class="row">
+                <div class="col-md-4 btw">
+                  <h2 id="bargainTimer"></h2>
+                </div>
+              </div>
+              <h1>Make an offer, Investor</h1>
+              <div class="row">
+                <div class="col-md-12" id="haggle">
+                  <label for="slider">Dollars (millions)</label>
+                  <input type="range" name="slider" id="slider" min="30" value="100" max="170" step="5" oninput="dollars.value = slider.value">
+                  <output name="dollars" id="dollars">100</output>
+                </div>
+                <div class="col-md-12" id="noAnnounceAgain">
+                  <h4 class="stonewallAgain"></h4><br>
+                  <button class="btn btn-lg btn-primary outline" id="noContinueAgain">Continue</button>
+                </div>
+              </div>
+              <h3 id="estValAgain"></h3>
+            </div>
+            <div class="col-md-2 col-md-offset-1 target">
+              <h1>Target</h1>
+              <h4>Score</h4>
+              <h1 class="targetScore"></h1>
+              <h4 id="bargainTargetChoices">Choices</h4>
+              <div class="choiceButtons">
+                <button class="btn btn-lg btn-info outline go">Walk</button>
+                <button class="btn btn-lg btn-info outline addChoices" id="accept">Accept</button>
+                <button class="btn btn-lg btn-info outline addChoices" id="reject">Reject</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="container col-md-6 col-md-offset-3" id="messageEnd">
+        <h2></h2>
+        <button class="btn btn-lg btn-primary outline" id="restart">Continue</button>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="./logic.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
