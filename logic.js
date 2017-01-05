@@ -1,3 +1,7 @@
+// JavaScript file intended to contain mainly game logic, referenced first in HTML file
+
+// Game statistics, not reset with each new round
+
 var game = {
   round: 1,
   noRounds: Math.ceil(Math.random() * 3) + 2,
@@ -13,6 +17,8 @@ var game = {
     }
   }
 }
+
+// First quotes object
 
 var quote1 = {
   quotes: {
@@ -35,6 +41,8 @@ var quote1 = {
   }
 }
 
+// Second quotes object
+
 var quote2 = {
   quotes: {
     'The buyer is entitled to a bargain. The seller is entitled to a profit. So there is a fine margin in between where the price is right.': 'Conrad Hilton',
@@ -55,12 +63,16 @@ var quote2 = {
   }
 }
 
+// Secret data points constructor
+
 function Secret (cat, effect, change, desc) {
   this.cat = cat
   this.effect = effect
   this.change = change
   this.desc = desc
 }
+
+// Constructed instances of secret data points
 
 var revPos = new Secret('cash', true, Math.random() < 0.5 ? 5 : 10, 'Revenue for the latest quarter exceeded expectations.')
 var profPos = new Secret('cash', true, Math.random() < 0.5 ? 5 : 10, 'The latest quarter\'s profits exceeded expectations.')
@@ -81,7 +93,12 @@ var hackNeg = new Secret('legal', false, Math.random() < 0.5 ? 5 : 10, 'The Targ
 var bidPos = new Secret('bid', true, Math.random() < 0.5 ? 5 : 20, 'There are multiple competitive bids for the Target.')
 var bidNeg = new Secret('bid', false, Math.random() < 0.5 ? 5 : 20, 'Despite rumours, there are no other bidders for the Target.')
 
+// Object for data points request phase (phase 1)
+
 var info = {
+
+  // Data point variables and randomized selection function for each round
+
   allSecrets: [revPos, profPos, revNeg, profNeg, techPos, techNeg, retainPos, ipPos, retainNeg, ipNeg, suitPos, regPos, hackPos, suitNeg, regNeg, hackNeg, bidPos, bidNeg],
   selectSecrets: [],
   targetSecret: undefined,
@@ -94,18 +111,25 @@ var info = {
       info.allSecrets[z - 1] = info.allSecrets[x]
       info.allSecrets[x] = y
     }
+
+    // Alternative implementation of function randomly selecting data points for each round
+
     // var chosen
     // for (var i = 0; i < 5; i++) {
     //   chosen = info.allSecrets[Math.floor(Math.random() * info.allSecrets.length)]
     //   info.selectSecrets.push(chosen)
     //   info.allSecrets.splice(info.allSecrets.indexOf(chosen), 1)
     // }
+
     info.selectSecrets.push(info.allSecrets[0])
     info.selectSecrets.push(info.allSecrets[1])
     info.selectSecrets.push(info.allSecrets[2])
     info.selectSecrets.push(info.allSecrets[3])
     info.selectSecrets.push(info.allSecrets[4])
   },
+
+  // Actual and Estimated Value variables and calculation functions
+
   actVal: 100,
   estVal: 100,
   calcActVal: function () {
@@ -126,9 +150,15 @@ var info = {
     }
     return info.estVal
   },
-  intervalID: undefined,
+
+  // Time and current player turn variables
+
   seconds: 16,
   player: 1,
+  intervalID: undefined,
+
+  // Declared variables and decrementing function for remaining requests and rejections, to be defined later
+
   noRequests: undefined,
   noDeclines: undefined,
   actionReducer: function () {
@@ -140,6 +170,9 @@ var info = {
       $('#noDeclines').html(info.noDeclines)
     }
   },
+
+  // Function to test if time to move to offer phase
+
   isTimeForDeal: function () {
     if (info.noRequests === 0 && info.player === 1) {
       clearInterval(info.intervalID)
@@ -149,6 +182,9 @@ var info = {
       return false
     }
   },
+
+  // DOM manipulation function upon disclosure of data point
+
   disclose: function () {
     if (info.isTimeForDeal() === false) {
       clearInterval(info.intervalID)
@@ -169,6 +205,9 @@ var info = {
       info.targetSecretButtonIndex = undefined
     }
   },
+
+  // Timer function
+
   updateTime: function () {
     clearInterval(info.intervalID)
     info.intervalID = setInterval(info.updateTime, 1000)
@@ -196,6 +235,9 @@ var info = {
       info.disclose()
     }
   },
+
+  // Object and selection function of messages displayed for each rejection by Target
+
   snideMsgs: {
     'Investor is surprised by Target\'s reticence.': 2,
     'Investor finds Target\'s diffidence curious.': 2,
@@ -225,10 +267,18 @@ var info = {
   }
 }
 
+// Object for offer phase (phase 2)
+
 var bargain = {
+
+  // Time and current player turn variables
+
   intervalID: undefined,
   seconds: 16,
   player: 1,
+
+  // Variables and decrementing function for remaining number of offers and value of current offer made
+
   noOffers: 3,
   offer: 0,
   actionReducer: function () {
@@ -237,6 +287,9 @@ var bargain = {
       $('#noOffers').html(bargain.noOffers)
     }
   },
+
+  // Function to test if round has ended and to update score
+
   isRoundOver: function () {
     if (bargain.noOffers === 0 && bargain.player === 1) {
       $('#messageEnd h2').html('Investor loses this round.<br><br>Wasted a lot of time, Investor.<br>')
@@ -256,6 +309,9 @@ var bargain = {
       return false
     }
   },
+
+  // Timer function
+
   updateTime: function () {
     clearInterval(bargain.intervalID)
     bargain.intervalID = setInterval(bargain.updateTime, 1000)
@@ -277,6 +333,9 @@ var bargain = {
       $('body').css('background-size', 'cover')
     }
   },
+
+  // Object and selection function of messages displayed for each rejection by Target
+
   snideMsgs: {
     'Target scoffs at Investor\'s derisory offer.': [140, 80],
     'Target bursts out laughing.': [140, 80],

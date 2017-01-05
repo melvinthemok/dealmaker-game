@@ -8,12 +8,18 @@
     <title>Dealmaker</title>
   </head>
   <body>
+
+    <!-- Starting cover page, from which user can see instructions or start game -->
+
     <div class="container col-md-6 col-md-offset-3" id="intro">
       <h1>Dealmaker</h1>
       <button class="btn btn-lg btn-primary outline" id="instruct">Instructions</button>
       <button class="btn btn-lg btn-primary outline" id="play">Play</button>
     </div>
     <div class="row">
+
+      <!-- Main instructions -->
+
       <div class="col-md-6 col-md-offset-3" id="mainInstruct">
         <div class="col-md-8 col-md-offset-2">
           <h1>Instructions</h1>
@@ -26,6 +32,9 @@
           <h4>At any point in time, either the Investor or the Target can walk away and the round will end immediately.</h4>
           <h4>In the second phase of the round, the Investor may make up to 3 offers, which the Target may either accept or reject.</h4>
           <h4>The possible outcomes at the end of each round are as follows:</h4>
+
+            <!--Point allocation in each round-->
+
           <ul class='lead'>
             <li>Investor pays Actual Value +/- $5 million:<br>Investor <strong><span style="color:#6eed0c">+1</span></strong> point<br>Target <strong><span style="color:#6eed0c">+1</span></strong> point</li><br>
             <li>Investor pays > Actual Value + $5 million:<br>Target <strong><span style="color:#6eed0c">+1</span></strong> point</li><br>
@@ -35,6 +44,9 @@
             <li>Target fails to respond to an offer within the time limit:<br>Target <strong><span style="color:#ff4842">-1</span></strong> point</li><br>
             <li>Either Investor or Target walks:<br>Investor <strong><span style="color:#ff4842">-3</span></strong> points<br>Target <strong><span style="color:#ff4842">-3</span></strong> points</li><br>
           </ul>
+
+          <!-- Win condition -->
+
           <h4>At the end of the game, the winner is the player with the greater number of points, <span style="color:#6eed0c">which must be positive</span>.</h4>
         </div>
         <div class="row">
@@ -47,6 +59,9 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3" id="secretInstruct">
         <div id="panel">
+
+          <!-- Page before secret instructions for Target -->
+
           <h2>Next up, Target's secret instructions.<br><br>Avert your gaze, Investor. No looking!</h1><br>
           <button class="btn btn-lg btn-primary outline" id="showSecInstr">Show</button>
         </div>
@@ -54,6 +69,9 @@
           <h2></h2>
         </div>
         <div id="secretInstructions">
+
+          <!-- Secret data points for Target -->
+
           <h3>The following information unknown to Investor will change Target's Estimated Value as follows:</h3>
           <div class="row">
             <div class="col-md-2 col-md-offset-2" id="buttonCol">
@@ -79,6 +97,9 @@
       </div>
     </div>
     <div class="row">
+
+      <!-- First quote page before info request phase -->
+
       <div class="col-md-6 col-md-offset-3" id="quote1">
         <h1></h1>
         <h5 class="lead"></h5>
@@ -86,9 +107,15 @@
       </div>
     </div>
     <div class="row">
+
+      <!-- Info request phase -->
+
       <div id="info">
         <div class="container">
           <div class="row">
+
+            <!-- Investor statistics and actions column -->
+
             <div class="col-md-2 investor">
               <h1>Investor</h1>
               <h4>Score</h4>
@@ -100,6 +127,9 @@
                 <button class="btn btn-lg btn-primary outline go">Walk</button>
               </div>
             </div>
+
+            <!-- Main gameplay area -->
+
             <div class="col-md-6 col-md-offset-1 board">
               <div class="row">
                 <div class="col-md-4 btw">
@@ -115,6 +145,9 @@
                   <button class='btn btn-lg outline'></button>
                   <button class='btn btn-lg outline'></button>
                 </div>
+
+                <!-- Alternative announcements depending on Target's response to Investor's request -->
+
                 <div class="col-md-12" id="yesAnnounce">
                   <h4 class="reveal"></h4><br>
                   <button class="btn btn-lg btn-primary outline" id="yesContinue">Continue</button>
@@ -124,8 +157,14 @@
                   <button class="btn btn-lg btn-primary outline" id="noContinue">Continue</button>
                 </div>
               </div>
+
+              <!-- Ongoing update of Target Estivated Value -->
+
               <h3 id="estVal"></h3>
             </div>
+
+            <!-- Target statistics and actions column -->
+
             <div class="col-md-2 col-md-offset-1 target">
               <h1>Target</h1>
               <h4>Score</h4>
@@ -146,6 +185,9 @@
       </div>
     </div>
     <div class="row">
+
+      <!-- Second quote page before offer phase -->
+
       <div class="container col-md-6 col-md-offset-3" id="messageMid">
         <h1></h1>
         <h5 class="lead"></h5>
@@ -153,9 +195,15 @@
       </div>
     </div>
     <div class="row">
+
+      <!-- Offer phase -->
+
       <div id="bargain">
         <div class="container">
           <div class="row">
+
+            <!-- Investor statistics and actions column -->
+
             <div class="col-md-2 investor">
               <h1>Investor</h1>
               <h4>Score</h4>
@@ -168,6 +216,9 @@
                 <button class="btn btn-lg btn-primary outline" id="offer">Offer</button>
               </div>
             </div>
+
+            <!-- Main gameplay area -->
+
             <div class="col-md-6 col-md-offset-1 board">
               <div class="row">
                 <div class="col-md-4 btw">
@@ -188,6 +239,9 @@
               </div>
               <h3 id="estValAgain"></h3>
             </div>
+
+            <!-- Target statistics and actions column -->
+
             <div class="col-md-2 col-md-offset-1 target">
               <h1>Target</h1>
               <h4>Score</h4>
@@ -204,13 +258,16 @@
       </div>
     </div>
     <div class="row">
+
+      <!-- Result for each round and the game announced -->
+
       <div class="container col-md-6 col-md-offset-3" id="messageEnd">
         <h2></h2>
         <button class="btn btn-lg btn-primary outline" id="restart">Continue</button>
       </div>
     </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
     <script src="./logic.js"></script>
     <script src="./main.js"></script>
   </body>
