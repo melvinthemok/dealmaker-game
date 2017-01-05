@@ -1,65 +1,60 @@
-# Your Project Name
+# Dealmaker
 
-This is the starter code for WDI projects. Please update this README file with information specific to your project. Replace this paragraph for instance, with a short description of your project. Then update the sections below. Refer to your project specificaion for instructions on how to submit your projects.
+A game of negotiation between an Investor and the Target over the price of a stake in the latter.
+
+Each game lasts a random number of rounds. Before the actual negotiation over price, the Investor gets to seek secret data points from the Target, which will each adjust the price. The actual value is known to the Target but not the Investor.
+
+The Investor can then make up to 3 offers, which the Target may accept or reject. Points are then allocated mainly depending on the difference between final price paid and actual value.
 
 ## Getting Started
 
-Provide instructions here about how to get your project running on our local machine. Do we just need to clone and open a certain file or do we need to install anything first.
+Simply clone this repository and open index.html in your browser to play.
 
 ### Prerequisites
 
-What is needed to install and run the project, how do we install them
-
-```
-Code example
-```
+There are no prerequisites to run the game.
 
 ### How to Use
 
-A step by step guide on how to install and use the project, for example if this is a game, how do we play it.
+Click the button on index.html labelled 'Instructions' to read the game rules.
 
+Click the 'Play' button on index.html when you and your opponent are ready.
 
-```
-Code example
-```
-
-More steps...
-
-```
-until finished
-```
-
+Gameplay controlled by mouse.
 
 ## Tests
 
-Did you write automated tests? If so, how do we run them.
-
-
-```
-Code example
-```
+No automated tests included.
 
 ## Live Version
 
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
+Watch this space.
 
 ## Built With
 
-What did you use to build it, list the technologies, plugins, gems, packages etc.
-
-* [jQuery](http://jquery.com/) - jQuery for example is something you likely used
+* [jQuery](http://jquery.com/)
+* [Bootstrap](https://getbootstrap.com/)
 
 ## Workflow
 
-Did you write user stories, draw wireframes, use task tracking, produce ERDs? Did you use source control, with regular commits? Include links to them here.
+Game logic and notes found [here](https://www.evernote.com/shard/s62/sh/96e2bbe1-6a80-41cd-b35d-7b95cf2c48f1/1a2acc28f744de1e122a85a235d2ce81).
+
+Commits in [Github repository](https://github.com/wdi-sg/wdi-7-project-1-melvinthemok/commits/master).
 
 ## Authors
 
-Did you collaborate with others on this project, list them here
-
-* **John McClain** - *Responsible for keeping vests white* - [GithubUserName](https://github.com/GithubUserName)
+Done solo.
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used, for example [this was a useful starting point for creating this template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2).
+Hat tip to:
 
+* Philipp Henzler's beautiful photo found [here] {https://unsplash.com/photos/dgE3lWVyDh8};
+* Anders Jildén's great photos found [here]{https://unsplash.com/photos/nxCtO8W9JLo} and [here]{https://unsplash.com/photos/yb0Qs65aZmc}.
+
+Clarity and inspiration from:
+
+* Christopher Gimmer's Bootstrap button article found [here](https://bootstrapbay.com/blog/bootstrap-button-styles/);
+* Dudley Storey's HTML5 range slider article found [here](http://thenewcode.com/757/Playing-With-The-HTML5-range-Slider-Input);
+* Professor Mary Row's / MIT's 'Two Dollar Game' lecture notes found [here] (https://ocw.mit.edu/courses/sloan-school-of-management/15-667-negotiation-and-conflict-management-spring-2001/lecture-notes/about_game.pdf); and
+* Ansarada's M&A game found [here](https://www.ansarada.com/mandagame).

@@ -26,7 +26,7 @@
           <h4>This is a negotiation game involving the sale of a stake in the Target to an Investor.</h4>
           <h4>In each game, there will be a random number of rounds to be played. Don't worry, it'll be a single-digit number.</h4>
           <h4>In every round, the Investor knows the Estimated Value to be $100 million. The Actual Value of the Target will be revealed in secret instructions to the Target.</h4>
-          <h4>Each round has 2 phases. In the first phase, there are 5 data points unknown to the Investor. If all data points are disclosed, this will reveal the Actual Value. The disclosure of each data point will update the Estimated Value, either <span style="color:#6eed0c">upwards</span> or <span style="color:#ff4842">downwards</span>.</h4>
+          <h4>Each round has 2 phases. In the first phase, there are 5 data points unknown to the Investor. If all data points are disclosed, this will reveal the Actual Value. The disclosure of each data point will update the Estimated Value, either <span style="color:#6eed0c">upwards</span> or <span style="color:#ff4842">downwards</span> by up to $20 million.</h4>
           <h4>The Investor has 6 chances to make requests for these 5 data points. The Investor has a time limit of 15 seconds to make a request, failing which the number of requests decreases by 1. When the Investor has no requests remaining, the first phase of the game ends.</h4>
           <h4>The Target has 3 chances to reject the Investor's requests. The Target's number of rejections will also decrease by 1 after 15 seconds. When the Target has no chances remaining, the requested data points will automatically be disclosed.</h4>
           <h4>At any point in time, either the Investor or the Target can walk away and the round will end immediately.</h4>
@@ -266,7 +266,6 @@
         <button class="btn btn-lg btn-primary outline" id="restart">Continue</button>
       </div>
     </div>
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="./logic.js"></script>
     <script src="./main.js"></script>
