@@ -291,7 +291,7 @@ var bargain = {
   // Function to test if round has ended and to update score
 
   isRoundOver: function () {
-    if (bargain.noOffers === 0 && bargain.player === 1) {
+    if (bargain.seconds === 0 && bargain.noOffers === 0 && bargain.player === 1) {
       $('#messageEnd h2').html('Investor loses this round.<br><br>Wasted a lot of time, Investor.<br>')
       $('#offer').off('click')
       game.score.player1 -= 1

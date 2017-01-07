@@ -452,7 +452,7 @@ $(function () {
 
     bargain.player = 1
 
-    if (bargain.isRoundOver() === false) {
+    if (bargain.noOffers > 0) {
 
       // If round is not over, show rejection message
 
@@ -463,10 +463,11 @@ $(function () {
       $('#offer').off('click')
       $('.addChoices').hide()
       $('#noAnnounceAgain').show()
-    } else if (bargain.isRoundOver() === true) {
+    } else if (bargain.noOffers === 0) {
 
       // If round is over, display end of round message
 
+      game.round += 1
       $('#bargain').hide()
       $('#messageEnd h2').html('Players failed to strike a deal.<br><br>')
       $('#messageEnd').show()
@@ -534,7 +535,7 @@ $(function () {
         $('#messageEnd h2').html('Well played! Target wins with a score of <span style="color:#6eed0c">' + game.score.player2 + '</span> against Investor\'s score of <span style="color:#ff4842">' + game.score.player1 + '</span>')
       } else if (game.score.player1 === game.score.player2 && game.score.player1 > 0) {
         $('#messageEnd h2').html('Both players are equally matched, with a score of <span style="color:#6eed0c">' + game.score.player1 + '</span>')
-      } else if (game.score.player1 < 0 && game.score.player2 < 0) {
+      } else if (game.score.player1 <= 0 && game.score.player2 <= 0) {
         $('#messageEnd h2').html('Abysmal. Both players lose with Investor scoring <span style="color:#ff4842">' + game.score.player1 + '</span> and Target scoring <span style="color:#ff4842">' + game.score.player2 + '</span>')
       }
       $('#messageEnd').css('margin-top', '240px')
