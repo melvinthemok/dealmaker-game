@@ -39,7 +39,7 @@ No automated tests included.
 
 Game logic and notes found [here](https://www.evernote.com/shard/s62/sh/96e2bbe1-6a80-41cd-b35d-7b95cf2c48f1/1a2acc28f744de1e122a85a235d2ce81).
 
-Commits in [Github repository](https://github.com/wdi-sg/wdi-7-project-1-melvinthemok/commits/master).
+Commits in [Github repository](https://github.com/melvinthemok/dealmaker-game).
 
 ## Authors
 
