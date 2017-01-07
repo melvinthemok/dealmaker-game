@@ -8,7 +8,7 @@ The Investor can then make up to 3 offers, which the Target may accept or reject
 
 ## Getting Started
 
-Simply clone this repository and open [index.html](https://github.com/wdi-sg/wdi-7-project-1-melvinthemok/blob/master/index.html) in your browser to play.
+Play [here](https://melvinthemok.github.io/dealmaker-game/).
 
 ### Prerequisites
 
@@ -16,9 +16,9 @@ There are no prerequisites to run the game.
 
 ### How to Use
 
-Click the button on [index.html](https://github.com/wdi-sg/wdi-7-project-1-melvinthemok/blob/master/index.html) labelled 'Instructions' to read the game rules.
+Click on 'Instructions' to read the game rules.
 
-Click the 'Play' button on [index.html](https://github.com/wdi-sg/wdi-7-project-1-melvinthemok/blob/master/index.html) when you and your opponent are ready.
+Click 'Play' when you and your opponent are ready.
 
 Gameplay controlled by mouse.
 
@@ -28,12 +28,12 @@ No automated tests included.
 
 ## Live Version
 
-Watch this space.
+[Here](https://melvinthemok.github.io/dealmaker-game/).
 
 ## Built With
 
-* [jQuery](http://jquery.com/)
-* [Bootstrap](https://getbootstrap.com/)
+* [jQuery 3.1.1](http://jquery.com/)
+* [Bootstrap 3.3.7](https://getbootstrap.com/)
 
 ## Workflow
 
