@@ -5,7 +5,6 @@ $(function () {
   // Function to reset variables and DOM and to call functions at the start of each round
 
   function initialize () {
-    console.log(game.noRounds)
 
     info.allSecrets = [revPos, profPos, revNeg, profNeg, techPos, techNeg, retainPos, ipPos, retainNeg, ipNeg, suitPos, regPos, hackPos, suitNeg, regNeg, hackNeg, bidPos, bidNeg]
     info.selectSecrets = []
@@ -263,6 +262,7 @@ $(function () {
   // DOM manipulation for display of Target secret instructions
 
   $('#showSecInstr').on('click', function () {
+    console.log('Starting round ' + game.round + ' of ' + game.noRounds)
     $('#panel').hide()
     $('#secretInstructions').show()
     $('#secretInstruct').addClass('col-md-6 col-md-offset-3')
@@ -469,7 +469,6 @@ $(function () {
 
       $('#bargain').hide()
       $('#messageEnd h2').html('Players failed to strike a deal.<br><br>')
-      game.round += 1
       $('#messageEnd').show()
       $('body').css('background', 'url(img/game-over.jpg) no-repeat center center fixed')
       $('body').css('background-size', 'cover')

@@ -213,7 +213,7 @@ var info = {
     info.intervalID = setInterval(info.updateTime, 1000)
     info.seconds -= 1
     if (info.seconds < 0) {
-      info.seconds = 16
+      info.seconds = 15
     }
     if (info.seconds >= 10) {
       $('#infoTimer').html('0:' + info.seconds)
@@ -317,7 +317,7 @@ var bargain = {
     bargain.intervalID = setInterval(bargain.updateTime, 1000)
     bargain.seconds -= 1
     if (bargain.seconds < 0) {
-      bargain.seconds = 16
+      bargain.seconds = 15
     }
     if (bargain.seconds >= 10) {
       $('#bargainTimer').html('0:' + bargain.seconds)
@@ -325,7 +325,6 @@ var bargain = {
       $('#bargainTimer').html('0:0' + bargain.seconds)
     }
     bargain.actionReducer()
-    bargain.isRoundOver()
     if (bargain.isRoundOver() === true) {
       $('#bargain').hide()
       $('#messageEnd').show()
