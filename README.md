@@ -4,7 +4,11 @@ A game of negotiation between an Investor and the Target over the price of a sta
 
 Each game lasts a random number of rounds. Before the actual negotiation over price, the Investor gets to seek secret data points from the Target, which will each adjust the price. The actual value is known to the Target but not the Investor.
 
+![alt tag](http://i.giphy.com/6q96bEW8ForOE.gif)
+
 The Investor can then make up to 3 offers, which the Target may accept or reject. Points are then allocated mainly depending on the difference between final price paid and actual value.
+
+![alt tag](http://i.giphy.com/XDe55UmsB2oXm.gif)
 
 ## Getting Started
 
@@ -16,7 +20,7 @@ There are no prerequisites to run the game.
 
 ### How to Use
 
-Click on 'Instructions' to read the game rules.
+Click on 'Instructions' to read the full game rules.
 
 Click 'Play' when you and your opponent are ready.
 
