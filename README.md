@@ -16,7 +16,7 @@ Play [here](https://melvinthemok.github.io/dealmaker-game/).
 
 ### Prerequisites
 
-There are no prerequisites to run the game.
+None.
 
 ### How to Use
 
@@ -24,11 +24,11 @@ Click on 'Instructions' to read the full game rules.
 
 Click 'Play' when you and your opponent are ready.
 
-Gameplay controlled by mouse.
+Gameplay using mouse.
 
-## Tests
+## Tests?
 
-No automated tests included.
+
 
 ## Live Version
 
@@ -42,8 +42,6 @@ No automated tests included.
 ## Workflow
 
 Game logic and notes found [here](https://www.evernote.com/shard/s62/sh/96e2bbe1-6a80-41cd-b35d-7b95cf2c48f1/1a2acc28f744de1e122a85a235d2ce81).
-
-Commits in [Github repository](https://github.com/melvinthemok/dealmaker-game).
 
 ## Authors
 
